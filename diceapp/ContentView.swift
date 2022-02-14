@@ -19,27 +19,25 @@ struct ContentView: View {
                 .edgesIgnoringSafeArea(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
             VStack {
                 Image("diceeLogo")
-                VStack {
-                    Spacer()
-                    HStack {
-                        DiceView(n: leftDiceNumber)
-                        DiceView(n: rightDiceNumber)
-                    }
-                    .padding(.horizontal)
-                    Spacer()
-                    Button(action:{
-                        self.rightDiceNumber = Int.random(in: 1...6)
-                        self.leftDiceNumber = Int.random(in: 1...6)
-                    }) {
-                        Text("Roll")
-                            .font(.system(size: 50))
-                            .fontWeight(.heavy)
-                            .foregroundColor(.white)
-                            .padding(.horizontal)
-                    }
-                    .background(Color.red)
-                    Spacer()
+                Spacer()
+                HStack {
+                    DiceView(n: leftDiceNumber)
+                    DiceView(n: rightDiceNumber)
                 }
+                .padding(.horizontal)
+                Spacer()
+                Button(action:{
+                    self.rightDiceNumber = Int.random(in: 1...6)
+                    self.leftDiceNumber = Int.random(in: 1...6)
+                }) {
+                    Text("Roll")
+                        .font(.system(size: 50))
+                        .fontWeight(.heavy)
+                        .foregroundColor(.white)
+                        .padding(.horizontal)
+                }
+                .background(Color.red)
+                .padding()
             }
         }
     }
